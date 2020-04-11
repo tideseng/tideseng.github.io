@@ -29,7 +29,7 @@ featured-condition-size: 0              # 相同标签数量大于这个数，�
 # Sidebar settings侧边栏
 sidebar: true    # whether or not using Sidebar
 sidebar-about-description: "on pain on gain"
-sidebar-avatar: img/about-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: https://upload-images.jianshu.io/upload_images/9110802-d63f5973fce57458.jpg   # 可以使用本地图片(img/xxx.jpg) 或 在线图片url
 
 
 # SNS settings社交账号

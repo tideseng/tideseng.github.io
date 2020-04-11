@@ -104,7 +104,11 @@ layout: default
                     <div class="short-about">
                         {% if site.sidebar-avatar %}
                             <a href="{{ site.baseurl }}/about">
+                                {% if site.sidebar-avatar|truncate:7 == 'http...' %}
+                                <img src="{{site.sidebar-avatar}}"/>
+                                {% else %}
                                 <img src="{{ site.baseurl }}/{{site.sidebar-avatar}}"/>
+                                {% endif %}
                             </a>
                         {% endif %}
                         {% if site.sidebar-about-description %}
