@@ -1,13 +1,19 @@
 ---
 layout: default
-description: "你来到了没有知识的荒原 🙊"
-header-img: "img/404-bg.jpg"
+description: 你来到了没有知识的荒原 🙊
+header-img: https://upload-images.jianshu.io/upload_images/9110802-d78742e0fb95a309.jpg
 permalink: /404.html
 ---
 
-
 <!-- Page Header -->
+{% if page.header-img and page.header-img|truncate:7 == 'http...' %}
+<header class="intro-header" style="background-image: url('{{ page.header-img }}')">
+{% else %}
+	{% if site.header-img and site.header-img|truncate:7 == 'http...' %}
+<header class="intro-header" style="background-image: url('{{ site.header-img }}')">
+	{% else %}
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+{% endif %}{% endif %}
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

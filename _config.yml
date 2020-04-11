@@ -1,8 +1,8 @@
 # ------------------------------------------系统设置（不能注释、可以修改）------------------------------------------
 # Site settings站点设置
-title: Tideseng   # blog title
+title: Tideseng     # blog title
 SEOTitle: tideseng的博客     # SEO title
-header-img: img/post-bg-desk.jpg
+header-img: https://upload-images.jianshu.io/upload_images/9110802-0df29ac6fb7651ed.jpg # 可以使用本地图片(img/xxx.jpg) 或 在线图片url
 email: tidesengli@gmail.com
 description: "tideseng's Personal Blog"
 keyword: "tideseng的博客, tideseng, Java, 程序员, 架构师, 工程师, 开发"
@@ -66,8 +66,7 @@ jianshu_username: f76a2424b7a2
 #ga_domain: xxx.com     # 有自定义域名设置成自定义域名；没有设置为auto
 
 
-
-# 评论系统
+# 评论
 # Gitalk
 #gitalk:
 #  enable: true    #是否开启Gitalk评论
