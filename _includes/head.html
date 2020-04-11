@@ -6,7 +6,8 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="keywords"  content="{{ site.keyword }}">
     <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
-    
+    <meta name="referrer" content="no-referrer" />
+
     <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
 
     <!-- Web App Manifest -->
@@ -16,7 +17,7 @@
     <link rel="shortcut icon" href="{{ site.baseurl }}/pwa/icons/favicon.ico">
 
     <!-- Safari Webpage Icon -->
-    <link rel="touch-icon" href="https://upload-images.jianshu.io/upload_images/9110802-bda166c546e36b87.png">
+    <link rel="touch-icon" referrer="no-referrer|origin|unsafe-url" href="https://upload-images.jianshu.io/upload_images/9110802-bda166c546e36b87.png">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

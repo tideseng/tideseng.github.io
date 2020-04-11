@@ -1,13 +1,20 @@
 ---
 layout: default
-description: "网络似乎出现了问题 😥"
-header-img: "img/404-bg.jpg"
+description: 网络似乎出现了问题 😥
+header-img: https://upload-images.jianshu.io/upload_images/9110802-d78742e0fb95a309.jpg
 permalink: /offline.html
 ---
 
 
 <!-- Page Header -->
+{% if page.header-img and page.header-img|truncate:7 == 'http...' %}
+<header class="intro-header" style="background-image: url('{{ page.header-img }}')">
+{% else %}
+	{% if site.header-img and site.header-img|truncate:7 == 'http...' %}
+<header class="intro-header" style="background-image: url('{{ site.header-img }}')">
+	{% else %}
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+{% endif %}{% endif %}
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
