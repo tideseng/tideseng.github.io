@@ -6,7 +6,14 @@ layout: default
 <style type="text/css">
     header.intro-header{
         position: relative;
+        {% if page.header-img and page.header-img|truncate:7 == 'http...' %}
+        background-image: url({{ page.header-img }})
+        {% else %}
+            {% if site.header-img and site.header-img|truncate:7 == 'http...' %}
+            background-image: url({{ site.header-img }})
+            {% else %}
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
+        {% endif %}{% endif %}
     }
 
     {% if page.header-mask %}
