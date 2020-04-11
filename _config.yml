@@ -68,14 +68,14 @@ ba_track_id: fd91b11696a87e67e3351ef7531e37be
 
 # 评论
 # Gitalk
-#gitalk:
-#  enable: true    #是否开启Gitalk评论
-#  clientID: xxx                            #生成的clientID
-#  clientSecret: xxxxxx    #生成的clientSecret
-#  repo: tideseng.github.io    #仓库名称
-#  owner: tideseng    #github用户名
-#  admin: tideseng    #github用户名
-#  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: bab1ee94e2c561b56aff                            #生成的clientID
+  clientSecret: 331e647abf01dbecf5dc723463b24f3e7c6898da    #生成的clientSecret
+  repo: tideseng.github.io    #仓库名称
+  owner: tideseng     #github用户名
+  admin: tideseng     #github用户名
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
 # ------------------------------------------环境设置（不能注释、不要修改）------------------------------------------
