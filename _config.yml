@@ -59,7 +59,7 @@ jianshu_username: f76a2424b7a2
 
 # 统计
 # 百度统计
-#ba_track_id:
+ba_track_id: fd91b11696a87e67e3351ef7531e37be
 
 # Google Analytics
 #ga_track_id: 'UA-xxxxxx-xx'

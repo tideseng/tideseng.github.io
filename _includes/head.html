@@ -43,6 +43,17 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- ga & ba script hoook -->
-    <script></script>
+    <!-- Baidu Tongji -->
+    {% if site.ba_track_id %}
+    <script>
+        var _baId = '{{ site.ba_track_id }}';
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?" + _baId;
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    {% endif %}
 </head>
