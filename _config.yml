@@ -1,24 +1,40 @@
-# Site settings
-title: Tideseng
-SEOTitle: tideseng的博客
+# ------------------------------------------系统设置（不能注释、可以修改）------------------------------------------
+# Site settings站点设置
+title: Tideseng   # blog title
+SEOTitle: tideseng的博客     # SEO title
 header-img: img/post-bg-desk.jpg
 email: tidesengli@gmail.com
 description: "tideseng's Personal Blog"
 keyword: "tideseng的博客, tideseng, Java, 程序员, 架构师, 工程师, 开发"
-url: "https://tideseng.github.io"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+url: "https://tideseng.github.io"    # your host, for absolute URL
+baseurl: ""   # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/tideseng/tideseng.github.io.git" # you code repository
 
-# Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+permalink: pretty
+paginate: 10    # 每页博客数量，当总数量超过这一数量会出现下一页
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true  # if you want to customize anchor. check out line:197 of `post.html`
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
+
+
+# ------------------------------------------侧边栏设置（可以注释、可以修改）------------------------------------------
+
+# Sidebar settings侧边栏
+sidebar: true    # whether or not using Sidebar
 sidebar-about-description: "on pain on gain"
 sidebar-avatar: /img/about-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
-
-# SNS settings
+# SNS settings社交账号
 RSS: false
-github_username: tideseng
+github_username: tideseng   # 必填，其它地方需要该参数值
 jianshu_username: f76a2424b7a2
 #zhihu_username: xxx
 #weibo_username: xxx
@@ -27,32 +43,27 @@ jianshu_username: f76a2424b7a2
 #linkedin_username: xxx
 
 
+# Friends(实际就是相关链接，和名字没有关系，看个人怎么使用)
+#friends: [
+#{
+#  title: "简书",
+#  href: "http://www.jianshu.com/u/f76a2424b7a2"
+#},{
+#  title: "Github",
+#  href: "https://github.com"
+#}
+#]
 
 
-# Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-permalink: pretty
-paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+# ------------------------------------------扩展功能（可以注释、可以修改）------------------------------------------
 
+# 统计
+# 百度统计
+#ba_track_id:
 
-
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
-
-
-
-
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+# Google Analytics
+#ga_track_id: 'UA-xxxxxx-xx'
+#ga_domain: xxx.com     # 有自定义域名设置成自定义域名；没有设置为auto
 
 
 
@@ -64,41 +75,27 @@ kramdown:
 #  clientSecret: xxxxxx    #生成的clientSecret
 #  repo: tideseng.github.io    #仓库名称
 #  owner: tideseng    #github用户名
-#  admin: tideseng
+#  admin: tideseng    #github用户名
 #  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
-# 统计
+# ------------------------------------------环境设置（不能注释、不要修改）------------------------------------------
 
-# Analytics settings
-# Baidu Analytics
-#ba_track_id:
-
-# Google Analytics
-#ga_track_id: 'UA-xxxxxx-xx'
-#ga_domain: xxx.com     # 有自定义域名设置成自定义域名；没有设置为auto
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
 
 
-
-# Featured Tags
-featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
-
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM  # use Github Flavored Markdown !important
 
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
-
-
-
-# Friends
-friends: [
-    {
-        title: "简书",
-        href: "http://www.jianshu.com/u/f76a2424b7a2"
-    },{
-        title: "Github",
-        href: "https://github.com"
-    }
-]
