@@ -74,7 +74,7 @@
  ```yaml
  # 侧边栏
  sidebar: true # 是否关闭侧边栏
- sidebar-avatar: "https://upload-images.jianshu.io/upload_images/9110802-d63f5973fce57458.jpg”   # 侧边栏个人头像，可以使用本地图片(img/xxx.jpg)
+ sidebar-avatar: "https://upload-images.jianshu.io/upload_images/9110802-d63f5973fce57458.jpg"   # 侧边栏个人头像，可以使用本地图片(img/xxx.jpg)
  sidebar-about-description: "on pain on gain" # 侧边栏个人描述
  email: "tidesengli@gmail.com" # 侧边栏个人联系邮箱
    

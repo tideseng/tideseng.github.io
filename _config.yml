@@ -1,36 +1,33 @@
 # ------------------------------------------系统设置（不能注释、可以修改）------------------------------------------
 # Site settings站点设置
-title: Tideseng     # blog title
-SEOTitle: tideseng的博客     # SEO title
-header-img: https://upload-images.jianshu.io/upload_images/9110802-0df29ac6fb7651ed.jpg # 可以使用本地图片(img/xxx.jpg) 或 在线图片url
-email: tidesengli@gmail.com
-description: "tideseng's Personal Blog"
+title: "Tideseng" 		# 网站主页背景图的标题
+SEOTitle: "tideseng的博客" # 网站窗口页面的标题
+header-img: https://upload-images.jianshu.io/upload_images/9110802-0df29ac6fb7651ed.jpg # 主页背景图，可以用本地图片(img/xxx.jpg) 或在线图片
+description: "tideseng's Personal Blog" # 网站介绍
 keyword: "tideseng的博客, tideseng, Java, 程序员, 架构师, 工程师, 开发"
-url: "https://tideseng.github.io"    # your host, for absolute URL
-baseurl: ""   # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/tideseng/tideseng.github.io.git" # you code repository
-
+url: "https://tideseng.github.io" # 个人博客网站地址
+baseurl: "" # 不建议填写
+github_repo: "https://github.com/tideseng/tideseng.github.io.git" # 对应的仓库页面
 
 # Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
-paginate: 10    # 每页博客数量，当总数量超过这一数量会出现下一页
+paginate: 10    # 每页博客显示的数量
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true  # if you want to customize anchor. check out line:197 of `post.html`
 
-
 # Featured Tags
-featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
+featured-tags: true   # 网站页面是否使用首页标签
+featured-condition-size: 0   # 相同标签数量大于指定数，才会出现在首页
 
 
 # ------------------------------------------侧边栏设置（可以注释、可以修改）------------------------------------------
 
-# Sidebar settings侧边栏
-sidebar: true    # whether or not using Sidebar
-sidebar-about-description: "on pain on gain"
-sidebar-avatar: https://upload-images.jianshu.io/upload_images/9110802-d63f5973fce57458.jpg   # 可以使用本地图片(img/xxx.jpg) 或 在线图片url
 
+# Sidebar settings侧边栏
+sidebar: true # 是否关闭侧边栏
+sidebar-avatar: "https://upload-images.jianshu.io/upload_images/9110802-d63f5973fce57458.jpg"   # 侧边栏个人头像，可以使用本地图片(img/xxx.jpg)
+sidebar-about-description: "on pain on gain" # 侧边栏个人描述
+email: "tidesengli@gmail.com" # 侧边栏个人联系邮箱
 
 # SNS settings社交账号
 RSS: false
@@ -41,7 +38,6 @@ jianshu_username: f76a2424b7a2
 #facebook_username: xxx
 #twitter_username: xxx
 #linkedin_username: xxx
-
 
 # 友情链接
 #friends: [
@@ -57,6 +53,7 @@ jianshu_username: f76a2424b7a2
 
 # ------------------------------------------扩展功能（可以注释、可以修改）------------------------------------------
 
+
 # 统计
 # 百度统计
 ba_track_id: fd91b11696a87e67e3351ef7531e37be
@@ -64,7 +61,6 @@ ba_track_id: fd91b11696a87e67e3351ef7531e37be
 # Google Analytics
 #ga_track_id: 'UA-xxxxxx-xx'
 #ga_domain: xxx.com     # 有自定义域名设置成自定义域名；没有设置为auto
-
 
 # 评论
 # Gitalk
@@ -80,10 +76,10 @@ gitalk:
 
 # ------------------------------------------环境设置（不能注释、不要修改）------------------------------------------
 
+
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
-
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -93,7 +89,6 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM  # use Github Flavored Markdown !important
-
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
