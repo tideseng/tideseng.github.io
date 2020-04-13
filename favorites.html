@@ -15,15 +15,15 @@ title: Favorites
 	{% for favorites in site.favorites %}
 		$favorites.append('' +
 				'<div class="card-dwg-title">' +
-				'	<span><i class="icon fa fa-usd fa-lg fa-fw"></i>'+{{favorites.category}}+'</span>' +
+				'	<span><i class="icon fa fa-usd fa-lg fa-fw"></i>{{favorites.category}}</span>' +
 				'</div>');
 		{% for favorite in favorites.favorite %}
 			$favorites.append('' +
-					'<a class="card-dwg-href" href="'+{{favorite.href}}+'" target="_blank">' +
+					'<a class="card-dwg-href" href="{{favorite.href}}" target="_blank">' +
 					'	<div class="card-dwg-href-div">' +
-					'		<div class="card-dwg-href-img" style="background-image: url('+{{favorite.image}}+');"></div>' +
-					'		<div class="card-dwg-href-name">'+{{favorite.name}}+'</div>' +
-					'		<div class="card-dwg-href-abstract" title="'+{{favorite.desc}}+'">'+favorite.desc}}+'</div>' +
+					'		<div class="card-dwg-href-img" style="background-image: url({{favorite.image}});"></div>' +
+					'		<div class="card-dwg-href-name">{{favorite.name}}</div>' +
+					'		<div class="card-dwg-href-abstract" title="{{favorite.desc}}">{{favorite.desc}}</div>' +
 					'	</div>' +
 					'</a>');
 		{% endfor %}
