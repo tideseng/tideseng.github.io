@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<!--  -->
+</head>
+
+---
+layout: default
+title: Favorites
+---
+
+<link rel="stylesheet" href="{{ '/css/favorite.css' | prepend: site.baseurl }}">
+<script type="text/javascript" href="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
+
+<div class="global-body">
+	<div class="card-dwg-hrefc">
+
+	</div>
+</div>
+
+<script type="text/javascript">
+{% if site.favorites %}
+	var favorites = "{{site.favorites}}";
+	var $favorites = $(".card-dwg-hrefc");
+	for (var i = 0; i < favorites.length; i++) {
+		$favorites.append('' +
+				'<div class="card-dwg-title">' +
+				'	<span><i class="icon fa fa-usd fa-lg fa-fw"></i>'+favorites[i].category+'</span>' +
+				'</div>');
+		for (var j = 0; j < favorites[i].favorite.length; j++) {
+			$favorites.append('' +
+					'<a class="card-dwg-href" href="'+favorites[i].favorite[j].href+'" target="_blank">' +
+					'	<div class="card-dwg-href-div">' +
+					'		<div class="card-dwg-href-img" style="background-image: url('+favorites[i].favorite[j].image+');"></div>' +
+					'		<div class="card-dwg-href-name">'+favorites[i].favorite[j].name+'</div>' +
+					'		<div class="card-dwg-href-abstract" title="'+favorites[i].favorite[j].desc+'">'+favorites[i].favorite[j].desc+'</div>' +
+					'	</div>' +
+					'</a>');
+		}
+	}
+{% endif %}
+</script>
+
+</body>
+</html>
