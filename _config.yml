@@ -79,17 +79,34 @@ favorites: [
   category: "编程/技术",
   favorite: [
     {href: "https://www.nowcoder.com/", image: "https://static.nowcoder.com/images/logo_87_87.png", name: "牛客网", desc: "笔试题库、面试经验"},
-#    {href: "http://www.acmcoder.com/index", image: "https://www.acmcoder.com/images/acm.ico", name: "赛码网", desc: "IT笔试面试加分利器，专注IT校招职位"},
+    {href: "http://www.acmcoder.com/index", image: "https://www.acmcoder.com/images/acm.ico", name: "赛码网", desc: "IT笔试面试加分利器，专注IT校招职位"},
     {href: "https://leetcode.com/problemset/algorithms/", image: "https://static.leetcode-cn.com/cn-assets/icons/apple-touch-icon-114x114.png", name: "Leet Code", desc: "算法题库、笔试题库"},
     {href: "https://github.com/", image: "https://github.com/fluidicon.png", name: "Github", desc: "The world’s leading software development platform"},
-#    {href: "https://gper.club/index/", image: "https://gper.club/static/img/favorite.ico", name: "GPer生态圈", desc: "IT技术人技术分享交流学习高端论坛社区"},
+    {href: "https://gper.club/index/", image: "https://gper.club/static/img/favorite.ico", name: "GPer生态圈", desc: "IT技术人技术分享交流学习高端论坛社区"},
     {href: "https://tech.meituan.com/", image: "https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/apple-icon-180x180.png", name: "美团技术", desc: "美团技术团队博客"}
   ]
 },{
   category: "资讯",
   favorite: [
-    {href: "https://readhub.cn/topics", image: "https://cdn.readhub.cn/static/assets/png/readhub_152.png", name: "Readhub", desc: "每天三分钟的科技新闻聚合阅读"},
+    {href: "https://readhub.cn/topics/", image: "https://cdn.readhub.cn/static/assets/png/readhub_152.png", name: "Readhub", desc: "每天三分钟的科技新闻聚合阅读"},
     {href: "https://tophub.today/", image: "https://file.ipadown.com/tophub/assets/images/favicon/apple-icon-114x114.png", name: "今日热榜", desc: "追踪全网热点、简单高效阅读"}
+  ]
+},{
+  category: "素材",
+  favorite: [
+  {href: "http://www.lifeofpix.com/", image: "https://www.lifeofpix.com/wp-content/themes/lifeofpix_v2/img/lop-logo-noir.svg", name: "Life of Pix", desc: "高清大图免费下载"},
+  {href: "http://pngimg.com/", image: "http://pngimg.com/favicon.ico", name: "pngimg", desc: "英文网站 PNG图片免费下载"},
+  {href: "https://unsplash.com/", image: "https://unsplash.com/apple-touch-icon.png", name: "unsplash", desc: "免费高清大图"},
+  {href: "https://pixabay.com/", image: "https://pixabay.com/apple-touch-icon.png", name: "Pixbay", desc: "老牌免费高清大图下载站"},
+  {href: "http://www.uugai.com/", image: "", name: "U钙网", desc: "免费LOGO制作 无需注册帐号"},
+  {href: "http://www.easyicon.net/", image: "https://cdn-img.easyicon.net/image/2019/panda-index.svg", name: "Easyicon", desc: "免费小图标下载"},
+  {href: "https://www.ssyer.com/", image: "https://www.ssyer.com/favicon.ico", name: "沙沙野", desc: "免费背景图片素材"},
+  {href: "https://webgradients.com/", image: "https://webgradients.com/favicons/favicon-128.png", name: "WebgGradients", desc: "超级好看的渐变色配色"}
+  ]
+},{
+  category: "工具",
+  favorite: [
+  {href: "https://zh.wikihow.com/", image: "https://www.wikihow.com/skins/WikiHow/wH-initials_152x152.png", name: "wikihow", desc: "日常问题指导手册"},
   ]
 }
 ]
