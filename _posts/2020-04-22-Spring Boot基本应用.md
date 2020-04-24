@@ -15,14 +15,22 @@ tags:
 
 ### 概念
 
-Spring Boot是基于Spring提供开箱即用的应用框架(Spring是简化企业级应用开发的轻量级框架，通过IOC和AOP，用POJO实现EJB的功能)
+Spring Boot是基于Spring提供开箱即用的应用框架，即服务于Spring框架的框架，服务范围是简化配置(Spring是简化企业级应用开发的轻量级框架，通过IOC和AOP，用POJO实现EJB的功能)
 
 ### 特点
 
 - 开箱即用，没有代码生成，也不需要XML配置
 - 起步依赖，通过传递依赖提供了默认的功能
-- 自动配置(约定优于配置)，尽可能自动配置Spring和第三方库
-- 提供了常用功能，如嵌入式服务器、指标，运行状况检查和外部化配置
+- 自动配置，尽可能自动配置Spring和第三方库
+- 提供了常用功能，如嵌入式Tomcat服务器、指标，运行状况检查和外部化配置
+
+### 约定优于配置的体现
+
+- 使用maven工程，默认以jar包方式打包、默认resource目录放配置文件和资源文件
+- 起步依赖，spring-boot-starter-web中提供mvc相关依赖和内置tomcat
+- 默认application配置文件
+- 默认通过spring.profiles.active决定运行的配置文件
+- EnableAutoConfiguration默认对于依赖的starter进行自动装配
 
 ## 快速入门
 
@@ -80,6 +88,16 @@ public class ControllerTest {
 
 }
 ```
+
+## 技术封装
+
+### AutoConfiguration
+
+### Starter
+
+### Actuator
+
+### SpringBoot CLI
 
 ## 原理分析
 
@@ -206,82 +224,124 @@ public class ControllerTest {
 
 #### @SpringBootApplication
 
-- 包含@SpringBootConfiguration注解
+##### @SpringBootConfiguration注解
 
   ```java
-  @Configuration // 声明该文件为配置文件
-  public @interface SpringBootConfiguration {
-  }
+@Configuration // 注解方式声明配置类
+public @interface SpringBootConfiguration {
+}
   ```
 
-- 包含@EnableAutoConfiguration注解
-
-  开启自动配置功能
+##### @ComponentScan注解
 
   ```java
-  @AutoConfigurationPackage
-  // 自动配置导入选择器
-  @Import({AutoConfigurationImportSelector.class})
-  public @interface EnableAutoConfiguration {
-  	String ENABLED_OVERRIDE_PROPERTY = "spring.boot.enableautoconfiguration";
-  	Class<?>[] exclude() default {};
-  	String[] excludeName() default {};
-  }
+// 扫描该包及其子包的相关Component注解类，放入IOC容器
+@ComponentScan(
+    excludeFilters = {@Filter(
+        type = FilterType.CUSTOM,
+        classes = {TypeExcludeFilter.class}
+    ), @Filter(
+        type = FilterType.CUSTOM,
+        classes = {AutoConfigurationExcludeFilter.class}
+    )}
+)
+  ```
+
+##### @EnableAutoConfiguration注解
+
+  开启自动配置功能，将符合条件的@Configuration配置加载到IOC容器中（动态注入）
+
+  简化bean的注入逻辑，从原始的xml注入-->注解注入-->自动注入
+
+  ```java
+// @Import注解可以配置三种不同的class
+// 基于普通的bean或带有@Configuration的bean进行直接注入
+// 实现ImportSelector接口进行动态注入
+// 实现ImportBeanDefinitionRegistrar接口进行动态注入
+// Registrar实现了ImportBeanDefinitionRegistrar接口进行动态注入
+@AutoConfigurationPackage // @Import({Registrar.class})，Registrar实现了ImportBeanDefinitionRegistrar接口进行动态注入
+// AutoConfigurationImportSelector实现了ImportSelector接口进行动态注入
+@Import({AutoConfigurationImportSelector.class})
+public @interface EnableAutoConfiguration {
+    String ENABLED_OVERRIDE_PROPERTY = "spring.boot.enableautoconfiguration";
+    Class<?>[] exclude() default {};
+    String[] excludeName() default {};
+}
   ```
 
   ```java
-  public class AutoConfigurationImportSelector implements DeferredImportSelector, BeanClassLoaderAware, ResourceLoaderAware, BeanFactoryAware, EnvironmentAware, Ordered {
-  
-      protected List<String> getCandidateConfigurations(AnnotationMetadata metadata, AnnotationAttributes attributes) {
-          // 从META-INF/spring.factories文件中读取指定类对应的类名称列表
-          List<String> configurations = SpringFactoriesLoader.loadFactoryNames(this.getSpringFactoriesLoaderFactoryClass(), this.getBeanClassLoader());
-          Assert.notEmpty(configurations, "No auto configuration classes found in META-INF/spring.factories. If you are using a custom packaging, make sure that file is correct.");
-          return configurations;
-      }
-  }
+// DeferredImportSelector接口继承自ImportSelector接口
+public class AutoConfigurationImportSelector implements DeferredImportSelector, BeanClassLoaderAware, ResourceLoaderAware, BeanFactoryAware, EnvironmentAware, Ordered {
+    // @Enable*注解的工作原理:ImportSelector接口的selectImports方法返回的数组（类的全类名）都会被纳入到spring容器中
+    @Override
+    public String[] selectImports(AnnotationMetadata annotationMetadata) {
+        if (!this.isEnabled(annotationMetadata)) {
+            return NO_IMPORTS;
+        } else {
+            // 先加载classpath/META-INF/spring-autoconfigure-metadata.properties文件
+            // 条件注解，后期用于条件过滤
+            AutoConfigurationMetadata autoConfigurationMetadata = AutoConfigurationMetadataLoader.loadMetadata(this.beanClassLoader);
+            // 调用getAutoConfigurationEntry方法
+            AutoConfigurationImportSelector.AutoConfigurationEntry autoConfigurationEntry = this.getAutoConfigurationEntry(autoConfigurationMetadata, annotationMetadata);
+            return StringUtils.toStringArray(autoConfigurationEntry.getConfigurations());
+        }
+    }
+
+    protected AutoConfigurationImportSelector.AutoConfigurationEntry getAutoConfigurationEntry(AutoConfigurationMetadata autoConfigurationMetadata, AnnotationMetadata annotationMetadata) {
+        if (!this.isEnabled(annotationMetadata)) {
+            return EMPTY_ENTRY;
+        } else {
+            AnnotationAttributes attributes = this.getAttributes(annotationMetadata);
+            // 1.调用getCandidateConfigurations方法，获取所有要注入的bean
+            List<String> configurations = this.getCandidateConfigurations(annotationMetadata, attributes);
+            // 2.对重复的bean进行去重（当依赖的其它jar包中存在/META-INF/spring.factories文件时bean可能重复，SPI扩展点）
+            configurations = this.removeDuplicates(configurations);
+            // 3.指定过滤，过滤在SpringBootApplication中的类
+            Set<String> exclusions = this.getExclusions(annotationMetadata, attributes);
+            this.checkExcludedClasses(configurations, exclusions);
+            configurations.removeAll(exclusions);
+            // 4.条件过滤，过滤spring-autoconfigure-metadata.properties文件中的条件，减少没必要的加载
+            configurations = this.filter(configurations, autoConfigurationMetadata);
+            this.fireAutoConfigurationImportEvents(configurations, exclusions);
+            return new AutoConfigurationImportSelector.AutoConfigurationEntry(configurations, exclusions);
+        }
+    }
+
+    protected List<String> getCandidateConfigurations(AnnotationMetadata metadata, AnnotationAttributes attributes) {
+        // SpringFactoriesLoader工具类，SPI扩展点
+        // 从classpath/META-INF/spring.factories文件中根据key来加载对应的类到IOC容器中
+        List<String> configurations = SpringFactoriesLoader.loadFactoryNames(this.getSpringFactoriesLoaderFactoryClass(), this.getBeanClassLoader());
+        Assert.notEmpty(configurations, "No auto configuration classes found in META-INF/spring.factories. If you are using a custom packaging, make sure that file is correct.");
+        return configurations;
+    }
+}
   ```
 
   ```properties
-  # spring.factories文件中得配置信息
-  org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration,\
-  ...,\
-  org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration,\...
+# spring.factories文件中得配置信息
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration,\
+...,\
+org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration,\...
   ```
 
   ```java
-  // 属性配置类ServerProperties类
-  @EnableConfigurationProperties({ServerProperties.class})
-  @Import({ServletWebServerFactoryAutoConfiguration.BeanPostProcessorsRegistrar.class, EmbeddedTomcat.class, EmbeddedJetty.class, EmbeddedUndertow.class})
-  public class ServletWebServerFactoryAutoConfiguration {...}
+// 属性配置类ServerProperties类
+@EnableConfigurationProperties({ServerProperties.class})
+@Import({ServletWebServerFactoryAutoConfiguration.BeanPostProcessorsRegistrar.class, EmbeddedTomcat.class, EmbeddedJetty.class, EmbeddedUndertow.class})
+public class ServletWebServerFactoryAutoConfiguration {...}
   ```
 
   ```java
-  // 配置文件和实体属性间的映射，在META-INF\spring-configuration-metadata.json文件中也能找到该属性
-  @ConfigurationProperties(prefix = "server",ignoreUnknownFields = true)
-  public class ServerProperties {
-      private Integer port;
-      private InetAddress address;
-      ...
-      get/set...
-  }
+// 配置文件和实体属性间的映射，在META-INF\spring-configuration-metadata.json文件中也能找到该属性
+@ConfigurationProperties(prefix = "server",ignoreUnknownFields = true)
+public class ServerProperties {
+    private Integer port;
+    private InetAddress address;
+    ...
+    get/set...
+}
   ```
-
-- 包含@ComponentScan注解
-
-  ```java
-  // 该包及其子包都会被扫描
-  @ComponentScan(
-      excludeFilters = {@Filter(
-      type = FilterType.CUSTOM,
-      classes = {TypeExcludeFilter.class}
-  ), @Filter(
-      type = FilterType.CUSTOM,
-      classes = {AutoConfigurationExcludeFilter.class}
-  )}
-  )
-  ```
-  
 
 ## 配置文件
 
@@ -671,5 +731,3 @@ public class JdbcConfig {
       
   }
   ```
-
-
