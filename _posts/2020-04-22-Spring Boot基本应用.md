@@ -263,7 +263,7 @@ public @interface SpringBootConfiguration {
 // AutoConfigurationImportSelector实现了ImportSelector接口进行动态注入
 @Import({AutoConfigurationImportSelector.class})
 public @interface EnableAutoConfiguration {
-    String ENABLED_OVERRIDE_PROPERTY = "spring.boot.enableautoconfiguration";
+    String ENABLED_OVERRIDE_PROPERTY = _5_enableautoconfiguration;
     Class<?>[] exclude() default {};
     String[] excludeName() default {};
 }
@@ -311,7 +311,7 @@ public class AutoConfigurationImportSelector implements DeferredImportSelector, 
         // SpringFactoriesLoader工具类，SPI扩展点
         // 从classpath/META-INF/spring.factories文件中根据key来加载对应的类到IOC容器中
         List<String> configurations = SpringFactoriesLoader.loadFactoryNames(this.getSpringFactoriesLoaderFactoryClass(), this.getBeanClassLoader());
-        Assert.notEmpty(configurations, "No auto configuration classes found in META-INF/spring.factories. If you are using a custom packaging, make sure that file is correct.");
+        Assert.notEmpty(configurations, _2_configuration);
         return configurations;
     }
 }
@@ -333,7 +333,7 @@ public class ServletWebServerFactoryAutoConfiguration {...}
   ```
 
   ```java
-// 配置文件和实体属性间的映射，在META-INF\spring-configuration-metadata.json文件中也能找到该属性
+_2_configuration
 @ConfigurationProperties(prefix = "server",ignoreUnknownFields = true)
 public class ServerProperties {
     private Integer port;
