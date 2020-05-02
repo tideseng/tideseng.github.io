@@ -107,6 +107,35 @@ favorites: [
   category: "工具",
   favorite: [
   {href: "https://zh.wikihow.com/", image: "https://www.wikihow.com/skins/WikiHow/wH-initials_152x152.png", name: "wikihow", desc: "日常问题指导手册"},
+  {href: "http://www.bejson.com/", image: "", name: "json", desc: "在线JSON校验格式化工具"},
+  {href: "https://www.veryins.com/", image: "", name: "ins", desc: "ins"},
+  {href: "https://lab.lyric.im/wxformat/", image: "", name: "公众号编辑器", desc: "微信公众号格式化编辑器"},
+  {href: "https://processon.com", image: "", name: "processon", desc: "在线作图"}
+  ]
+},{
+  category: "影视",
+  favorite: [
+  {href: "www.weixintv8.com/", image: "", name: "微信影院", desc: "最全的最新电视剧"},
+  {href: "https://www.xigua2222.com", image: "https://www.xigua2222.com/favicon.ico", name: "西瓜影院", desc: "全球最新好看的高清免费电影电视剧"},
+  {href: "http://www.qsptv.net/", image: "http://www.qsptv.net/favicon.ico", name: "全视频TV", desc: "全网电影电视剧免费在线观看"},
+  {href: "http://www.lv98.cn/", image: "http://www.lv98.cn/favicon.ico", name: "98影视", desc: "搜全网影视"},
+  {href: "http://www.hanju.cc/", image: "http://www.hanju.cc/favicon.ico", name: "韩剧网", desc: "H9T韩剧社区"},
+  {href: "http://www.hanfan.cc/", image: "https://www.hanfan.cc/imgs/favicon.ico", name: "韩饭网", desc: "专注于韩娱分享的中文网站"},
+  {href: "https://www.juji.tv/", image: "https://www.juji.tv/favicon.ico", name: "韩剧网", desc: "韩剧TV,最新韩剧,韩国电视剧,剧集网"}
+  ]
+},{
+  category: "资源",
+  favorite: [
+  {href: "http://www.wpsousuo.cn/", image: "", name: "网盘搜索", desc: "百度云资源搜索引擎"},
+  {href: "http://www.rufengso.net/", image: "http://59.110.8.204:8085/favicon.ico", name: "如风搜", desc: "全网网盘搜索工具"},
+  {href: "http://5sing.kugou.com/", image: "https://5sstatic.kugou.com/public/images/5sing_icon72.png", name: "5sing音乐", desc: "原创音乐基地"},
+  {href: "http://www.nlc.cn/", image: "http://www.nlc.cn/favicon.ico", name: "国家图书馆", desc: "中国国家图书馆"},
+  {href: "http://www.ypppt.com/", image: "http://www.ypppt.com/favicon.ico", name: "优品PPT", desc: "免费PPT模板下载"},
+  {href: "http://www.51pptmoban.com/", image: "http://www.51pptmoban.com/favicon.ico", name: "51PPT模板网", desc: "幻灯片演示模板及素材下载"},
+  {href: "http://www.tretars.com/", image: "http://www.tretars.com/wp-content/uploads/2018/03/logo-fav.png", name: "比格PPT", desc: "逼格PPT模板网"},
+  {href: "https://bp.pep.com.cn/jc/", image: "", name: "2020年春季人教版教科书", desc: "人教版中小学教材电子版"},
+  {href: "http://www.pep.com.cn/", image: "http://www.pep.com.cn/favicon.ico", name: "人教社官网", desc: "人民教育出版社官方网站"},
+  {href: "https://px.pep.com.cn/", image: "https://px.pep.com.cn/favicon.ico", name: "教师网络培训和服务平台", desc: "人民教育出版社官方培训网站"}
   ]
 }
 ]
