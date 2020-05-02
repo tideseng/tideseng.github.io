@@ -83,7 +83,8 @@ favorites: [
     {href: "https://leetcode.com/problemset/algorithms/", image: "https://static.leetcode-cn.com/cn-assets/icons/apple-touch-icon-114x114.png", name: "Leet Code", desc: "算法题库、笔试题库"},
     {href: "https://github.com/", image: "https://github.com/fluidicon.png", name: "Github", desc: "The world’s leading software development platform"},
     {href: "https://gper.club/index/", image: "https://gper.club/static/img/favorite.ico", name: "GPer生态圈", desc: "IT技术人技术分享交流学习高端论坛社区"},
-    {href: "https://tech.meituan.com/", image: "https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/apple-icon-180x180.png", name: "美团技术", desc: "美团技术团队博客"}
+    {href: "https://tech.meituan.com/", image: "https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/apple-icon-180x180.png", name: "美团技术", desc: "美团技术团队博客"},
+    {href: "http://www.bejson.com/", image: "", name: "json", desc: "在线JSON校验格式化工具"}
   ]
 },{
   category: "资讯",
@@ -107,7 +108,6 @@ favorites: [
   category: "工具",
   favorite: [
   {href: "https://zh.wikihow.com/", image: "https://www.wikihow.com/skins/WikiHow/wH-initials_152x152.png", name: "wikihow", desc: "日常问题指导手册"},
-  {href: "http://www.bejson.com/", image: "", name: "json", desc: "在线JSON校验格式化工具"},
   {href: "https://www.veryins.com/", image: "", name: "ins", desc: "ins"},
   {href: "https://lab.lyric.im/wxformat/", image: "", name: "公众号编辑器", desc: "微信公众号格式化编辑器"},
   {href: "https://processon.com", image: "", name: "processon", desc: "在线作图"}
