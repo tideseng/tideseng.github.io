@@ -87,6 +87,11 @@ favorites: [
     {href: "http://www.bejson.com/", image: "", name: "json", desc: "在线JSON校验格式化工具"}
   ]
 },{
+  category: "官方文档",
+  favorite: [
+  {href: "https://docs.oracle.com/en/java/javase/index.html/", image: "https://docs.oracle.com/sp_common/site-template/ohc-common/img/favicon.ico", name: "JDK文档", desc: "Java Platform, Standard Edition Documentation"}
+  ]
+},{
   category: "资讯",
   favorite: [
     {href: "https://readhub.cn/topics/", image: "https://cdn.readhub.cn/static/assets/png/readhub_152.png", name: "Readhub", desc: "每天三分钟的科技新闻聚合阅读"},
