@@ -89,7 +89,10 @@ favorites: [
 },{
   category: "官方文档",
   favorite: [
-  {href: "https://docs.oracle.com/en/java/javase/index.html/", image: "https://docs.oracle.com/sp_common/site-template/ohc-common/img/favicon.ico", name: "JDK文档", desc: "Java Platform, Standard Edition Documentation"}
+  {href: "https://docs.oracle.com/en/java/javase/index.html/", image: "https://docs.oracle.com/sp_common/site-template/ohc-common/img/favicon.ico", name: "JDK文档", desc: "Java Platform, Standard Edition Documentation"},
+  {href: "https://spring.io/projects/spring-framework#learn", image: "https://docs.spring.io/favicon.ico", name: "Spring文档", desc: "Spring官方文档"},
+  {href: "https://spring.io/projects/spring-boot#learn", image: "https://docs.spring.io/favicon.ico", name: "Spring Boot文档", desc: "Spring Boot官方文档"},
+  {href: "https://spring.io/projects/spring-cloud#learn", image: "https://docs.spring.io/favicon.ico", name: "Spring Cloud文档", desc: "Spring Cloud官方文档"}
   ]
 },{
   category: "资讯",
