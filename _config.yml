@@ -83,6 +83,7 @@ favorites: [
     {href: "http://www.acmcoder.com/index", image: "https://www.acmcoder.com/images/acm.ico", name: "赛码网", desc: "IT笔试面试加分利器，专注IT校招职位"},
     {href: "https://leetcode.com/problemset/algorithms/", image: "https://static.leetcode-cn.com/cn-assets/icons/apple-touch-icon-114x114.png", name: "Leet Code", desc: "算法题库、笔试题库"},
     {href: "https://github.com/", image: "https://github.com/fluidicon.png", name: "Github", desc: "The world’s leading software development platform"},
+    {href: "https://github.com/2227324689/JavaGuide", image: "https://github.com/fluidicon.png", name: "Java面试", desc: "Java面试指导"},
     {href: "https://gper.club/index/", image: "https://gper.club/static/img/favorite.ico", name: "GPer生态圈", desc: "IT技术人技术分享交流学习高端论坛社区"},
     {href: "https://tech.meituan.com/", image: "https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/apple-icon-180x180.png", name: "美团技术", desc: "美团技术团队博客"},
     {href: "http://www.bejson.com/", image: "", name: "json", desc: "在线JSON校验格式化工具"}
