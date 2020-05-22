@@ -105,6 +105,7 @@ favorites: [
 },{
   category: "素材",
   favorite: [
+  {href: "https://www.chuangkit.com/", image: "https://www.chuangkit.com/favicon.ico", name: "创客贴", desc: "图片模板在线设计"},
   {href: "http://www.lifeofpix.com/", image: "https://www.lifeofpix.com/wp-content/themes/lifeofpix_v2/img/lop-logo-noir.svg", name: "Life of Pix", desc: "高清大图免费下载"},
   {href: "http://pngimg.com/", image: "http://pngimg.com/favicon.ico", name: "pngimg", desc: "英文网站 PNG图片免费下载"},
   {href: "https://unsplash.com/", image: "https://unsplash.com/apple-touch-icon.png", name: "unsplash", desc: "免费高清大图"},
