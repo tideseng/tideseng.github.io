@@ -86,6 +86,7 @@ favorites: [
     {href: "https://github.com/2227324689/JavaGuide", image: "https://github.com/fluidicon.png", name: "Java面试", desc: "Java面试指导"},
     {href: "https://gper.club/index/", image: "https://gper.club/static/img/favorite.ico", name: "GPer生态圈", desc: "IT技术人技术分享交流学习高端论坛社区"},
     {href: "https://tech.meituan.com/", image: "https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/apple-icon-180x180.png", name: "美团技术", desc: "美团技术团队博客"},
+    {href: "https://tech.youzan.com/", image: "https://tech.youzan.com/content/images/2017/10/logo.png", name: "有赞技术", desc: "有赞技术团队博客"},
     {href: "http://www.bejson.com/", image: "", name: "json", desc: "在线JSON校验格式化工具"}
   ]
 },{
