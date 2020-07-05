@@ -78,6 +78,7 @@ favorites: [
 {
   category: "编程/技术",
   favorite: [
+    {href: "https://www.cnblogs.com/JavaArchitect", image: "https://www.cnblogs.com/favorite.ico", name: "博客园-JavaArchitect", desc: "个人博客"},
     {href: "https://www.nowcoder.com/", image: "https://static.nowcoder.com/images/logo_87_87.png", name: "牛客网", desc: "笔试题库、面试经验"},
     {href: "https://www.nowcoder.com/tutorial/94/5b2a11580157458e9981d943c7f25390/", image: "https://static.nowcoder.com/images/logo_87_87.png", name: "Java工程师面试宝典", desc: "笔试题库、面试经验"},
     {href: "http://www.acmcoder.com/index", image: "https://www.acmcoder.com/images/acm.ico", name: "赛码网", desc: "IT笔试面试加分利器，专注IT校招职位"},
@@ -86,8 +87,7 @@ favorites: [
     {href: "https://github.com/2227324689/JavaGuide", image: "https://github.com/fluidicon.png", name: "Java面试", desc: "Java面试指导"},
     {href: "https://gper.club/index/", image: "https://gper.club/static/img/favorite.ico", name: "GPer生态圈", desc: "IT技术人技术分享交流学习高端论坛社区"},
     {href: "https://tech.meituan.com/", image: "https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/apple-icon-180x180.png", name: "美团技术", desc: "美团技术团队博客"},
-    {href: "https://tech.youzan.com/", image: "https://tech.youzan.com/content/images/2017/10/logo.png", name: "有赞技术", desc: "有赞技术团队博客"},
-    {href: "http://www.bejson.com/", image: "", name: "json", desc: "在线JSON校验格式化工具"}
+    {href: "https://tech.youzan.com/", image: "https://tech.youzan.com/content/images/2017/10/logo.png", name: "有赞技术", desc: "有赞技术团队博客"}
   ]
 },{
   category: "官方文档",
